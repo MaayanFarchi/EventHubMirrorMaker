@@ -1,4 +1,4 @@
-g#!/bin/bash
+#!/bin/bash
 set -e
 parse_dns () {
         START=`expr index "$1" sb://`
