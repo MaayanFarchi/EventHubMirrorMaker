@@ -7,8 +7,8 @@ parse_dns () {
         SEND=$(($END -$SSTART -1))
         echo `expr substr $1 $SSTART $SEND`
 }
-topic=mytopic7
-count=500000
+topic=mytopic1
+count=5000
 size=1000
 rate=100
 while getopts ":t:c:s:r:d:h:" opt; do
