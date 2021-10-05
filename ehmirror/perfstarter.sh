@@ -7,7 +7,7 @@ parse_dns () {
         SEND=$(($END -$SSTART -1))
         echo `expr substr $1 $SSTART $SEND`
 }
-topic=mytopic1
+topic=mirrormaker2-cluster-configs
 count=5000
 size=1000
 rate=100
