@@ -7,10 +7,10 @@ parse_dns () {
         SEND=$(($END -$SSTART -1))
         echo `expr substr $1 $SSTART $SEND`
 }
-topic=helloworld3
-count=50
-size=100
-rate=100
+topic=helloworld4
+count=5000000000
+size=1000
+rate=100000000
 while getopts ":t:c:s:r:d:h:" opt; do
   case $opt in
     t) topic="$OPTARG"
@@ -39,7 +39,7 @@ then
     DNS=$(parse_dns $dest)
     PERF_PRODUCER_CONFIG="bootstrap.servers=$DNS:9093\nclient.id=mirror_maker_producer\nrequest.timeout.ms=60000\nsasl.mechanism=PLAIN\nsecurity.protocol=SASL_SSL\nsasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username=\"\$ConnectionString\" password=\"$dest\";"
     echo -e $PERF_PRODUCER_CONFIG > perf.producer.config
-    kafka-producer-perf-test --topic $topic --record-size $size --producer.config perf.producer.config  --throughput $rate --num-records $count
+    kafka-producer-perf-test --topic $topic --record-size $size --producer.config perf.producer.config --num-records $count
 else
     echo "missing -d destinaton connection string, use -h for help"
 fi
