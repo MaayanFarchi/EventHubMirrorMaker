@@ -9,7 +9,7 @@ parse_dns () {
 }
 topic=theone3
 count=5000000
-size=1000
+size=100
 rate=1000000000
 while getopts ":t:c:s:r:d:h:" opt; do
   case $opt in
