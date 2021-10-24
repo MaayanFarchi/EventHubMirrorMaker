@@ -7,7 +7,7 @@ parse_dns () {
         SEND=$(($END -$SSTART -1))
         echo `expr substr $1 $SSTART $SEND`
 }
-topic=theone5
+topic=theone3
 count=5000000
 size=100
 rate=214748300
